@@ -1,7 +1,7 @@
 body {
     background: rgb(0,125,196);
     background: linear-gradient(90deg, rgba(0,125,196,1) 0%, rgba(0,98,187,1) 77%, rgba(0,126,255,1) 100%);
-    background-image: url("/Resources/Background.png");
+    background-image: url('Resources/Background.png');
 }
 
 h1 {
