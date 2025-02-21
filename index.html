@@ -15,9 +15,96 @@
         <meta property="og:title" content="Zakdev's Portfolio">
     </head>
     <body>
+        <style>
+            .dropbtn {
+              background-color: #3498DB;
+              color: white;
+              padding: 16px;
+              font-size: 16px;
+              border: none;
+              cursor: pointer;
+            }
+            
+            .dropbtn:hover, .dropbtn:focus {
+              background-color: #2980B9;
+            }
+            
+            .dropdown {
+              position: relative;
+              display: inline-block;
+            }
+            
+            .dropdown-content {
+              display: none;
+              position: absolute;
+              background-color: #f1f1f1;
+              min-width: 160px;
+              overflow: auto;
+              box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+              z-index: 1;
+            }
+            
+            .dropdown-content a {
+              color: black;
+              padding: 12px 16px;
+              text-decoration: none;
+              display: block;
+            }
+            
+            .dropdown a:hover {background-color: #ddd;}
+            
+            .show {display: block;}
+            </style>
+            </head>
+            
+            <div class="dropdown">
+              <button onclick="myFunction()" class="dropbtn" style="font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">Select Language</button>
+              <div id="myDropdown" class="dropdown-content">
+                <a style="font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;" onclick="SelectLanguage('English')">🇬🇧 English</a>
+                <a style="font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;" 
+                onclick="
+                document.getElementById('introtext0').innerText = '¡Ey! ¡Soy zakdev!';
+                document.getElementById('introtext1').innerText = '¡Soy un desarrollador de roblox especializado en scripting y también estoy aprendiendo UI/UX y GFX!';
+                ">🇪🇸 Español</a>
+                <a style="font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+                "onclick="
+                document.getElementById('introtext0').innerText = '¡Ey! ¡Soy zakdev!';
+                document.getElementById('introtext1').innerText = '¡Soy un desarrollador de roblox especializado en scripting y también estoy aprendiendo UI/UX y GFX!';
+                ">🇫🇷 Français</a>
+                <a style="font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+                "onclick="
+                document.getElementById('introtext0').innerText = '¡Ey! ¡Soy zakdev!';
+                document.getElementById('introtext1').innerText = '¡Soy un desarrollador de roblox especializado en scripting y también estoy aprendiendo UI/UX y GFX!';
+                ">🇵🇹 Português</a>
+                <a style="font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+                "onclick="SelectLanguage('Arabic')">🇸🇦 العربية</a>
+              </div>
+            </div>
+            
+            <script>
+            /* When the user clicks on the button, 
+            toggle between hiding and showing the dropdown content */
+            function myFunction() {
+              document.getElementById("myDropdown").classList.toggle("show");
+            }
+            
+            // Close the dropdown if the user clicks outside of it
+            window.onclick = function(event) {
+              if (!event.target.matches('.dropbtn')) {
+                var dropdowns = document.getElementsByClassName("dropdown-content");
+                var i;
+                for (i = 0; i < dropdowns.length; i++) {
+                  var openDropdown = dropdowns[i];
+                  if (openDropdown.classList.contains('show')) {
+                    openDropdown.classList.remove('show');
+                  }
+                }
+              }
+            }
+            </script>
         <div id="intro" style="width: 500px; height: 500px; margin-top: 5%;">
             <img id="KrushPFP" src="Resources/KTDDarkBlueBackgroundWithPalestineFlag.png" style="width: 128px; height: 128px;" alt="Zakdev's Profile Picture">
-            <h1 style="font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">Hey! I'm zakdev!</h1>
+            <h1 id="introtext0" style="font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">Hey! I'm zakdev!</h1>
             <h2 id="introtext1" style="font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">I'm a roblox developer who specializes in Scripting and is also learning UI/UX!</h2>
             <div id="externals-container" style="width: 190px ; height: 50px; margin: auto; margin-left: 55%; margin-top: 10%;">
                 <a href="https://www.roblox.com/users/1109284369/profile">
@@ -37,7 +124,7 @@
                 </a>
             </div>
         </div>
-        <div id="skills-container" style="width: 470px ; height: 200px; margin: auto;">
+        <div id="skills-container" style="width: 470px ; height: 300px; margin: auto;">
             <h1 style="font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; color: white; text-align: center; margin-top: 10%;">My Skills</h1>
             <a href="#Scripting">
                 <div id="ScriptingButton" style="width: 200px ; height: 60px; margin-top: 5%; font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; display: flex; align-items: center;">
@@ -49,6 +136,12 @@
                 <div id="UIUXButton" style="width: 200px ; height: 60px; margin-top: 5%; font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; display: flex; align-items: center;">
                     <img src="Resources/UIUX_Icon.png" style="width: 25%; height: 90%; margin-right: 10px;">
                     <h2>UI/UX</h2>
+                </div>
+            </a>
+            <a href="#GFX">
+                <div id="GFXButton" style="width: 200px ; height: 60px; margin-top: 5%; font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; display: flex; align-items: center;">
+                    <img src="Resources/GFX_Icon.png" style="width: 25%; height: 90%; margin-right: 10px;">
+                    <h2>GFX</h2>
                 </div>
             </a> 
         </div>
@@ -87,9 +180,17 @@
                 <div style="position: relative; padding-bottom: 56.25%; height: 0;"><iframe src="https://www.loom.com/embed/7046a8831fcf413bb79910a5be991d19?sid=f932be02-4fa9-41d8-a82d-954a9634f312" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
             </div>
         </div>
-        <div id="UI-UX" style="width: 650px; height: 500px; margin: auto;">
+        <div id="UI-UX" style="width: 650px; height: 1570px; margin: auto;">
             <h1 style="font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; color: white; text-align: center;">UI/UX</h1>
-            <img src="Resources/UI_Work_1.png" style="width: 800px; height: 500px; margin-left: -10%;" alt="Blue Shop button and Red 'X' Button">
+            <img src="Resources/UI_Work_1.png" style="width: 800px; height: 500px; margin-left: -10%;" alt="Blue Shop button and Red 'X' button">
+            <img src="Resources/UI_Work_2.png" style="width: 644px; height: 243px;" alt="Blue Shop button and Red 'X' button">
+            <img src="Resources/UI_Work_3.png" style="width: 721px; height: 421px; margin-left: -5%;" alt="Blue Shop button and Red 'X' button">
+            <img src="Resources/UI_Work_4.png" style="width: 625px; height: 341px;" alt="Blue Shop button and Red 'X' button">
+        </div>
+        <div id="GFX" style="width: 650px; height: 850px; margin: auto;">
+            <h1 style="font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; color: white; text-align: center;">GFX</h1>
+            <img src="Resources/GFX_Work_1.png" style="width: 800px; height: 450px; margin-left: -10%;" alt="Blue Shop button and Red 'X' button">
+            <img src="Resources/GFX_Work_2.png" style="width: 644px; height: 400px;" alt="Blue Shop button and Red 'X' button">
         </div>
     </body>
 </html>
